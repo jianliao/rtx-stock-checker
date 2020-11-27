@@ -22,7 +22,7 @@ const main = async () => {
           const items = Array.from(document.querySelectorAll(site.selectors.item));
           for (let item of items) {
             const stockStatus = item.querySelector(site.selectors.status).textContent.trim();
-            if (!site.excluded_flags.includes(stockStatus)) {
+            if (!site.excluded_flags.includes(stockStatus) || stockStatus === 'Add to Cart') {
               const itemUrl = item.querySelector(site.selectors.url).href;
               const itemName = item.querySelector(site.selectors.name).textContent.trim();
               result.push({ name: itemName, status: stockStatus, url: itemUrl });
