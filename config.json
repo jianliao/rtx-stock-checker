@@ -2,88 +2,118 @@
   "discord_webhook": {
     "url": "https://discord.com/api/webhooks/781595065419300895/UFPvTiAf7rmsl0ESuyzd8WT2HUwFmKK9mREL1acrTjvJTA0gIbiIETuY14tIti0Py2yt"
   },
-  "bestbuy": {
-    "avatar": "https://ih1.redbubble.net/image.1115991461.1297/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
-    "username": "Best Buy",
-    "products": [
-      {
-        "name": "RTX 3070",
-        "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=category_facet%3DGPUs%20%2F%20Video%20Graphics%20Cards~abcat0507002%5Echipsetmanufacture_facet%3DChipset%20Manufacture~NVIDIA&sc=Global&st=rtx%203070&type=page&usc=All%20Categories"
+  "sites": [
+    {
+      "avatar": "https://ih1.redbubble.net/image.1115991461.1297/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+      "username": "Best Buy",
+      "selectors": {
+        "item": ".sku-item",
+        "status": ".add-to-cart-button",
+        "name": ".sku-header a",
+        "url": ".sku-header a"
       },
-      {
-        "name": "RTX 3080",
-        "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~NVIDIA&sc=Global&st=rtx%203080&type=page&usc=All%20Categories"
+      "excluded_flags": ["Sold Out", "Coming Soon"],
+      "products": [
+        {
+          "name": "RTX 3070",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=category_facet%3DGPUs%20%2F%20Video%20Graphics%20Cards~abcat0507002%5Echipsetmanufacture_facet%3DChipset%20Manufacture~NVIDIA&sc=Global&st=rtx%203070&type=page&usc=All%20Categories"
+        },
+        {
+          "name": "RTX 3080",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~NVIDIA&sc=Global&st=rtx%203080&type=page&usc=All%20Categories"
+        },
+        {
+          "name": "RTX 3090",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~NVIDIA&sc=Global&st=rtx%203090&type=page&usc=All%20Categories"
+        },
+        {
+          "name": "Radeon 6800",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~AMD&sc=Global&st=AMD%206800&type=page&usc=All%20Categories"
+        },
+        {
+          "name": "Radeon 6800XT",
+          "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~AMD&sc=Global&st=AMD%206800%20xt&type=page&usc=All%20Categories"
+        }
+      ]
+    },
+    {
+      "avatar": "https://c1.neweggimages.com/WebResource/Themes/2005/Nest/logo_424x210.png",
+      "username": "Newegg",
+      "selectors": {
+        "item": ".item-cell",
+        "status": ".item-button-area",
+        "name": ".item-title",
+        "url": ".item-title"
       },
-      {
-        "name": "RTX 3090",
-        "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~NVIDIA&sc=Global&st=rtx%203090&type=page&usc=All%20Categories"
+      "excluded_flags": ["Sold Out", "Auto Notify"],
+      "products": [
+        {
+          "name": "RTX 3070",
+          "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601357250"
+        },
+        {
+          "name": "RTX 3080",
+          "url": "https://www.newegg.com/p/pl?N=100007709%20601357247%204841"
+        },
+        {
+          "name": "RTX 3090",
+          "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601357248"
+        },
+        {
+          "name": "Radeon 6800",
+          "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601359427"
+        },
+        {
+          "name": "Radeon 6800XT",
+          "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601359422"
+        }
+      ]
+    },
+    {
+      "avatar": "https://www.bhphotovideo.com/favicon.ico",
+      "username": "B & H",
+      "selectors": {
+        "item": "[data-selenium='miniProductPageProduct']",
+        "status": "[data-selenium='miniProductPageQuantityContainer']",
+        "name": "[data-selenium='miniProductPageProductNameLink']",
+        "url": "[data-selenium='miniProductPageProductNameLink']"
       },
-      {
-        "name": "Radeon 6800",
-        "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~AMD&sc=Global&st=AMD%206800&type=page&usc=All%20Categories"
+      "excluded_flags": ["Notify When Available"],
+      "products": [
+        {
+          "name": "RTX 3070",
+          "url": "https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_nvidia-geforce-series_5011%3Ageforce-rtx-3070"
+        },
+        {
+          "name": "RTX 3080",
+          "url": "https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_nvidia-geforce-series_5011%3Ageforce-rtx-3080"
+        }
+      ]
+    },
+    {
+      "avatar": "https://sybergaming.com/wp-content/uploads/2019/03/adorama-camera-vector-logo.png",
+      "username": "Adorama",
+      "selectors": {
+        "item": "[class='item']",
+        "status": "button",
+        "name": ".item-details .trackEvent",
+        "url": ".item-details .trackEvent"
       },
-      {
-        "name": "Radeon 6800XT",
-        "url": "https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&id=pcat17071&iht=y&keys=keys&ks=960&list=n&qp=chipsetmanufacture_facet%3DChipset%20Manufacture~AMD&sc=Global&st=AMD%206800%20xt&type=page&usc=All%20Categories"
-      }
-    ]
-  },
-  "newegg": {
-    "avatar": "https://c1.neweggimages.com/WebResource/Themes/2005/Nest/logo_424x210.png",
-    "username": "Newegg",
-    "products": [
-      {
-        "name": "RTX 3070",
-        "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601357250"
-      },
-      {
-        "name": "RTX 3080",
-        "url": "https://www.newegg.com/p/pl?N=100007709%20601357247%204841"
-      },
-      {
-        "name": "RTX 3090",
-        "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601357248"
-      },
-      {
-        "name": "Radeon 6800",
-        "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601359427"
-      },
-      {
-        "name": "Radeon 6800XT",
-        "url": "https://www.newegg.com/p/pl?N=100007709%204841%20601359422"
-      }
-    ]
-  },
-  "bh": {
-    "avatar": "https://www.bhphotovideo.com/favicon.ico",
-    "username": "B & H",
-    "products": [
-      {
-        "name": "RTX 3070",
-        "url": "https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_nvidia-geforce-series_5011%3Ageforce-rtx-3070"
-      },
-      {
-        "name": "RTX 3080",
-        "url": "https://www.bhphotovideo.com/c/products/Graphic-Cards/ci/6567/N/3668461602?filters=fct_nvidia-geforce-series_5011%3Ageforce-rtx-3080"
-      }
-    ]
-  },
-  "adorama": {
-    "avatar": "https://sybergaming.com/wp-content/uploads/2019/03/adorama-camera-vector-logo.png",
-    "username": "Adorama",
-    "products": [
-      {
-        "name": "RTX 3070",
-        "url": "https://www.adorama.com/l/?searchinfo=rtx%203070&sel=Item-Condition_New-Items"
-      },
-      {
-        "name": "RTX 3080",
-        "url": "https://www.adorama.com/l/?searchinfo=video%20card%20rtx%203080&sel=Item-Condition_New-Items"
-      },
-      {
-        "name": "RTX 3090",
-        "url": "https://www.adorama.com/l/?searchinfo=video%20card%20rtx%203090&sel=Item-Condition_New-Items"
-      }
-    ]
-  }
+      "excluded_flags": ["Temporarily not available"],
+      "products": [
+        {
+          "name": "RTX 3070",
+          "url": "https://www.adorama.com/l/?searchinfo=rtx%203070&sel=Item-Condition_New-Items"
+        },
+        {
+          "name": "RTX 3080",
+          "url": "https://www.adorama.com/l/?searchinfo=video%20card%20rtx%203080&sel=Item-Condition_New-Items"
+        },
+        {
+          "name": "RTX 3090",
+          "url": "https://www.adorama.com/l/?searchinfo=video%20card%20rtx%203090&sel=Item-Condition_New-Items"
+        }
+      ]
+    }
+  ]
 }
