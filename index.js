@@ -14,26 +14,30 @@ const main = async () => {
     for (let site of config.sites) {
       logger.log('info', `${site.username} -- start`);
       const page = await browser.newPage();
-      for (let product of site.products) {
-        logger.log('info', `  ${product.name}`);
-        await page.goto(product.url);
-        const productStatus = await page.evaluate((site) => {
-          const result = [];
-          const items = Array.from(document.querySelectorAll(site.selectors.item));
-          for (let item of items) {
-            const stockStatus = item.querySelector(site.selectors.status).textContent.trim();
-            if (!site.excluded_flags.includes(stockStatus) || stockStatus === 'Add to Cart') {
-              const itemUrl = item.querySelector(site.selectors.url).href;
-              const itemName = item.querySelector(site.selectors.name).textContent.trim();
-              result.push({ name: itemName, status: stockStatus, url: itemUrl });
+      try {
+        for (let product of site.products) {
+          logger.log('info', `  ${product.name}`);
+          await page.goto(product.url);
+          const productStatus = await page.evaluate((site) => {
+            const result = [];
+            const items = Array.from(document.querySelectorAll(site.selectors.item));
+            for (let item of items) {
+              const stockStatus = item.querySelector(site.selectors.status).textContent.trim();
+              if (!site.excluded_flags.includes(stockStatus) || stockStatus === 'Add to Cart') {
+                const itemUrl = item.querySelector(site.selectors.url).href;
+                const itemName = item.querySelector(site.selectors.name).textContent.trim();
+                result.push({ name: itemName, status: stockStatus, url: itemUrl });
+              }
             }
+            return Promise.resolve(result);
+          }, site);
+          for (let availableProduct of productStatus) {
+            logger.log('info', `Found One !!!\n ${availableProduct}`);
+            setNotification(site.avatar, site.username, `${availableProduct.name}\n\n${availableProduct.status}\n\n${availableProduct.url}`);
           }
-          return Promise.resolve(result);
-        }, site);
-        for (let availableProduct of productStatus) {
-          logger.log('info', `Found One !!!\n ${availableProduct}`);
-          setNotification(site.avatar, site.username, `${availableProduct.name}\n\n${availableProduct.status}\n\n${availableProduct.url}`);
         }
+      } finally {
+        page.close();
       }
       logger.log('info', `${site.username} -- end`);
     }
