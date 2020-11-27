@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "discord-webhook-node": "^1.1.8",
-    "puppeteer": "^5.5.0",
+    "puppeteer-core": "^5.5.0",
     "winston": "^3.3.3"
   }
 }

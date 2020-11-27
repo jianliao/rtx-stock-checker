@@ -3,7 +3,7 @@ const config = require('./config');
 
 const { Webhook } = require('discord-webhook-node');
 const hook = new Webhook(config.discord_webhook.url);
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -25,8 +25,10 @@ logger.add(new winston.transports.Console({
   format: winston.format.simple(),
 }));
 
+const launchConfig = { headless: false, executablePath: '/usr/bin/chromium-browser' };
+
 const bestbuy = async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch(launchConfig);
   try {
     const page = await browser.newPage();
     for (let product of config.bestbuy.products) {
@@ -58,7 +60,7 @@ const bestbuy = async () => {
 }
 
 const newegg = async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch(launchConfig);
   try {
     const page = await browser.newPage();
     for (let product of config.newegg.products) {
@@ -90,7 +92,7 @@ const newegg = async () => {
 }
 
 const bh = async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch(launchConfig);
   try {
     const page = await browser.newPage();
     for (let product of config.bh.products) {
@@ -122,7 +124,7 @@ const bh = async () => {
 }
 
 const adorama = async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch(launchConfig);
   try {
     const page = await browser.newPage();
     for (let product of config.adorama.products) {
