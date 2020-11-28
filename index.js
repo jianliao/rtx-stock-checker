@@ -12,11 +12,11 @@ const main = async () => {
   const browser = await puppeteer.launch(launchConfig);
   try {
     for (let site of config.sites) {
-      logger.log('info', `${site.username} -- start`);
+      logger.log('info', `  ${site.username} -- start`);
       const page = await browser.newPage();
       try {
         for (let product of site.products) {
-          logger.log('info', `  ${product.name}`);
+          logger.log('info', `    ${product.name}`);
           await page.goto(product.url);
           const productStatus = await page.evaluate((site) => {
             const result = [];
@@ -32,14 +32,13 @@ const main = async () => {
             return Promise.resolve(result);
           }, site);
           for (let availableProduct of productStatus) {
-            logger.log('info', `Found One !!!\n ${availableProduct}`);
+            logger.log('info', `    Found One !!!\n${JSON.stringify(availableProduct, undefined, 2)}`);
             setNotification(site.avatar, site.username, `${availableProduct.name}\n\n${availableProduct.status}\n\n${availableProduct.url}`);
           }
         }
       } finally {
         page.close();
       }
-      logger.log('info', `${site.username} -- end`);
     }
   } finally {
     browser.close();
