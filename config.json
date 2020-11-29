@@ -12,6 +12,7 @@
         "name": ".sku-header a",
         "url": ".sku-header a"
       },
+      "device": "iPhone SE",
       "excluded_flags": ["Sold Out", "Coming Soon"],
       "products": [
         {
