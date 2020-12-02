@@ -13,7 +13,7 @@
         "url": ".sku-header a"
       },
       "device": "iPhone SE",
-      "excluded_flags": ["Sold Out", "Coming Soon"],
+      "excluded_flags": ["Sold Out", "Coming Soon", "See Details"],
       "products": [
         {
           "name": "RTX 3070",
