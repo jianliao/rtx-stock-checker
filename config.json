@@ -46,7 +46,7 @@
         "name": ".item-title",
         "url": ".item-title"
       },
-      "excluded_flags": ["Sold Out", "Auto Notify"],
+      "excluded_flags": ["Sold Out", "Auto Notify", "View Detail"],
       "products": [
         {
           "name": "RTX 3070",
@@ -100,7 +100,7 @@
         "name": ".item-details .trackEvent",
         "url": ".item-details .trackEvent"
       },
-      "excluded_flags": ["Temporarily not available"],
+      "excluded_flags": ["Temporarily not available", "Pre-Order"],
       "products": [
         {
           "name": "RTX 3070",
