@@ -46,7 +46,7 @@
         "name": ".item-title",
         "url": ".item-title"
       },
-      "excluded_flags": ["Sold Out", "Auto Notify", "View Detail"],
+      "excluded_flags": ["Sold Out", "Auto Notify", "View Details"],
       "products": [
         {
           "name": "RTX 3070",
